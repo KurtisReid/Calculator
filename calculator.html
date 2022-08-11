@@ -85,6 +85,18 @@
             console.log("subtract");
             console.log(answer);
             answerParam.innerText = answer;
+
+            saveOperation.v1 = var1;
+            saveOperation.v2 = var2;
+            saveOperation.v3 = answer;
+            console.log("Saved operation " + saveOperation.v1)
+            saved.push(saveOperation);
+
+            li.innerText = saveOperation.v1 + " - " + saveOperation.v2 + " = " + answer;
+            
+            li.id = saved.v1;
+            //console.log("saved " + saved);
+            savedList.appendChild(li);
         }
         if (operation === "multiply")
         {
@@ -92,6 +104,18 @@
             console.log("multiply");
             console.log(answer);
             answerParam.innerText = answer;
+
+            saveOperation.v1 = var1;
+            saveOperation.v2 = var2;
+            saveOperation.v3 = answer;
+            console.log("Saved operation " + saveOperation.v1)
+            saved.push(saveOperation);
+
+            li.innerText = saveOperation.v1 + " * " + saveOperation.v2 + " = " + answer;
+            
+            li.id = saved.v1;
+            //console.log("saved " + saved);
+            savedList.appendChild(li);
         }
         if (operation === "divide")
         {
@@ -99,6 +123,18 @@
             console.log("divide");
             console.log(answer);
             answerParam.innerText = answer;
+
+            saveOperation.v1 = var1;
+            saveOperation.v2 = var2;
+            saveOperation.v3 = answer;
+            console.log("Saved operation " + saveOperation.v1)
+            saved.push(saveOperation);
+
+            li.innerText = saveOperation.v1 + " / " + saveOperation.v2 + " = " + answer;
+            
+            li.id = saved.v1;
+            //console.log("saved " + saved);
+            savedList.appendChild(li);
         }
         if (operation === "save")
         {
