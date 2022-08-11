@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <input id="numberInput" type="number"/>
+    <input id="numberInput2" type="number"/>
+    <p id ="answer"></p>
+
+    <button data-operation="add">add</button>
+    <button data-operation="subtract" >subtract</button>
+    <button data-operation="multiply">multiply</button>
+    <button data-operation="divide">divide</button>
+    <button data-operation="save">Check Memory</button>
+
+    <br />
+
+    <ul id="savedList">
+
+
+    </ul>
+
+</body>
+<script>
+    const answerParam = document.getElementById("answer");
+
+    const saveBtn = document.getElementById("save");
+
+    const saved = [];
+
+    
+
+    
+    //const li = document.createElement("li");
+
+
+
+
+    document.addEventListener("click", function(event)
+    {
+        let input1 = Number(document.getElementById("numberInput").value);
+        let input2 = Number(document.getElementById("numberInput2").value);
+        let answer = 0;
+        const savedList = document.getElementById("savedList");
+        console.log(event.target);
+
+        const element = event.target;
+        const operation = element.dataset.operation;
+
+        const var1 = input1;
+        const var2 = input2;
+
+        const li = document.createElement("li");
+
+        const saveOperation = {v1:var1, v2:var2, v3:answer, op:"+"};
+
+        if (operation === "add")
+        {
+            //answer += input1;
+            answer = input1 + input2;
+            console.log("add");
+            console.log(answer);
+            answerParam.innerText = answer;
+
+
+            saveOperation.v1 = var1;
+            saveOperation.v2 = var2;
+            saveOperation.v3 = answer;
+            console.log("Saved operation " + saveOperation.v1)
+            saved.push(saveOperation);
+
+            li.innerText = saveOperation.v1 + " + " + saveOperation.v2 + " = " + answer;
+            
+            li.id = saved.v1;
+            //console.log("saved " + saved);
+            savedList.appendChild(li);
+
+
+        }
+        if (operation === "subtract")
+        {
+            answer = input1 - input2;
+            console.log("subtract");
+            console.log(answer);
+            answerParam.innerText = answer;
+        }
+        if (operation === "multiply")
+        {
+            input1 *= input2;
+            console.log("multiply");
+            console.log(answer);
+            answerParam.innerText = answer;
+        }
+        if (operation === "divide")
+        {
+            input1 /= input2;
+            console.log("divide");
+            console.log(answer);
+            answerParam.innerText = answer;
+        }
+        if (operation === "save")
+        {
+            for (let i = 0; i < saved.length; i++)
+            {
+                console.log(saved[i]);
+            }
+        }
+
+        
+
+    });
+
+
+</script>
+</html>
